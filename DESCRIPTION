@@ -1,6 +1,6 @@
 Type: Package
 Package: simplygraph
-Title: Functons to Simplyfiy Graph Topology
+Title: Functons to Simplify Graph Topology
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Matthew",
