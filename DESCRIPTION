@@ -1,0 +1,22 @@
+Type: Package
+Package: simplygraph
+Title: Functons to Simplyfiy Graph Topology
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Matthew",
+           family = "Lincoln",
+           role = c("aut", "cre"),
+           email = "mlincoln@andrew.cmu.edu",
+           comment = c(ORCID = "0000-0002-4387-3384"))
+Description: More about what it does (maybe more than one line)
+    Use four spaces when indenting paragraphs within the Description.
+License: MIT + file LICENSE
+Imports: 
+    igraph,
+    Matrix
+Suggests: 
+    testthat
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 6.1.1
