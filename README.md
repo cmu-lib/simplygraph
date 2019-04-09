@@ -25,17 +25,19 @@ set.seed(100)
 library(igraph)
 library(simplygraph)
 
-graph <- graph_from_edgelist(
+graph <- igraph::graph_from_edgelist(
   matrix(c(
     "a", "b",
     "b", "f",
-    "b", "c",
-    "c", "d",
+    "b", "d",
+    "d", "c",
     "d", "e",
-    "e", "f",
+    "e", "k",
+    "j", "k",
     "f", "g",
-    "d", "h",
-    "h", "i"
+    "c", "h",
+    "h", "i",
+    "f", "j"
   ), ncol = 2, byrow = TRUE),
   directed = FALSE
 )
@@ -45,8 +47,8 @@ plot(graph)
 
 <img src="man/figures/README-build-1.png" width="100%" />
 
-Nodes `e`, `c`, and `h` could be removed without fundamentally altering
-the relationship of path intersections in this graph.
+Nodes `j`, `k`, `e`, `c`, and `h` could be removed without fundamentally
+altering the relationship of path intersections in this graph.
 `simplify_topology()` finds those 2-degree nodes and removes them,
 rewiring the remaining tangent nodes.
 
