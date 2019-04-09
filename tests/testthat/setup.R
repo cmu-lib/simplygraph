@@ -2,13 +2,14 @@ graph <- igraph::graph_from_edgelist(
   matrix(c(
     "a", "b",
     "b", "f",
-    "b", "c",
-    "c", "d",
+    "b", "d",
+    "d", "c",
     "d", "e",
-    "e", "f",
+    "e", "j",
     "f", "g",
-    "d", "h",
-    "h", "i"
+    "c", "h",
+    "h", "i",
+    "f", "j"
   ), ncol = 2, byrow = TRUE),
   directed = FALSE
 )
