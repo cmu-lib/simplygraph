@@ -1,0 +1,61 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+# simplygraph
+
+simplygraph provides functions to simplify graph topologies.
+
+## Installation
+
+You can install the development version of simplygraph from [GitHub](https://github.com/dSHARP-CMU/simplygraph) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("dSHARP-CMU/simplygraph")
+```
+
+## Example
+
+Say you have a graph where multiple nodes could be removed while still maintaining the same intersections between paths:
+
+```{r build, message=FALSE}
+set.seed(100)
+library(igraph)
+library(simplygraph)
+
+graph <- graph_from_edgelist(
+  matrix(c(
+    "a", "b",
+    "b", "f",
+    "b", "c",
+    "c", "d",
+    "d", "e",
+    "e", "f",
+    "f", "g",
+    "d", "h",
+    "h", "i"
+  ), ncol = 2, byrow = TRUE),
+  directed = FALSE
+)
+
+plot(graph)
+```
+
+Nodes `e`, `c`, and `h` could be removed without fundamentally altering the relationship of path intersections in this graph. `simplify_topology()` finds those 2-degree nodes and removes them, rewiring the remaining tangent nodes.
+
+```{r simplify, message=FALSE}
+simple_graph <- simplify_topology(graph)
+
+plot(simple_graph)
+```
