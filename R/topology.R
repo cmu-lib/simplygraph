@@ -6,7 +6,7 @@
 #' @param graph An undirected [`igraph`][igraph::igraph] object
 #' @param protected_nodes Indices of nodes that should NOT be removed
 #'
-#' @importFrom igraph as_adjacency_matrix as_data_frame graph_from_adjacency_matrix edge.attributes<-
+#' @import igraph
 #'
 #' @return An undirected [`igraph`][igraph::igraph] object with no 2-degree
 #'   nodes
