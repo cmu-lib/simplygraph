@@ -18,11 +18,11 @@ simplygraph provides functions to simplify graph topologies.
 
 ## Installation
 
-You can install the development version of simplygraph from [GitHub](https://github.com/dSHARP-CMU/simplygraph) with:
+You can install the development version of simplygraph from [GitHub](https://github.com/cmu-lib/simplygraph) with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("dSHARP-CMU/simplygraph")
+devtools::install_github("cmu-lib/simplygraph")
 ```
 
 ## Example
